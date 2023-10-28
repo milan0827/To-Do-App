@@ -43,11 +43,6 @@
       font-size: 2rem;
       font-weight: 500;
     }
-
-    p {
-      color: var(--grey-color);
-      font-size: 1.4rem;
-    }
   }
 
   &__time {
@@ -57,5 +52,17 @@
     color: var(--pink-color);
     font-size: 1.2rem;
     // justify-content: space-between;
+  }
+
+  &__comment {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--grey-color);
+    font-size: 1rem;
+
+    .icon {
+      font-size: 1.6rem;
+    }
   }
 }

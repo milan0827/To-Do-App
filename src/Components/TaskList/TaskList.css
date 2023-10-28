@@ -39,13 +39,19 @@
   font-size: 2rem;
   font-weight: 500;
 }
-.task__desc p {
-  color: var(--grey-color);
-  font-size: 1.4rem;
-}
 .task__time {
   display: flex;
   gap: 4rem;
   color: var(--pink-color);
   font-size: 1.2rem;
+}
+.task__comment {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--grey-color);
+  font-size: 1rem;
+}
+.task__comment .icon {
+  font-size: 1.6rem;
 }/*# sourceMappingURL=TaskList.css.map */

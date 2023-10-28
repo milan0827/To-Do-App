@@ -1,3 +1,4 @@
+import { BiComment } from "react-icons/bi";
 import "./TaskList.css";
 
 function TaskList({ tasks }) {
@@ -11,7 +12,10 @@ function TaskList({ tasks }) {
             <div className="task__time">
               <span>{task.taskTime}</span> <span>{task.taskDate}</span>
             </div>
-            <p>{task.comment}</p>
+            <div className="task__comment">
+              <BiComment className="icon" />
+              <p>{task.comment}</p>
+            </div>
           </div>
         </li>
       ))}

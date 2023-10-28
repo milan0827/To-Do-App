@@ -66,37 +66,27 @@ const tasks = [
   },
 ];
 
-const comments = [
-  {
-    id: 123,
-    commentTitle: "good",
-  },
-  {
-    id: 124,
-    commentTitle: "good",
-  },
-  {
-    id: 125,
-    commentTitle: "good",
-  },
-];
-
 function Welcome() {
   const [formOpen, setFormOpen] = useState(false);
-  const [taskList, setTaskList] = useState(tasks);
+  const [taskList, setTaskList] = useState([]);
   const [title, setTitle] = useState("");
   const [comment, setComment] = useState("");
-  // const [taskTime, setTaskTime] = useState(taskCreatedTime);
-  // const [taskDate, setTaskDate] = useState(taskCreatedTime);
+  const [taskTime, setTaskTime] = useState(taskCreatedTime);
+  const [taskDate, setTaskDate] = useState(taskCreatedDate);
+
+  const taskNumber = taskList.length;
+  console.log(taskNumber);
 
   const id = crypto.randomUUID();
 
   function handleTaskFormSubmit(e) {
     e.preventDefault();
+    if (!title) return;
     const newTask = {
       id,
       title,
-      // taskTime,
+      taskTime,
+      taskDate,
     };
 
     handleAddTask(newTask);
@@ -106,6 +96,7 @@ function Welcome() {
 
   function handleCommentFormSubmit(e) {
     e.preventDefault();
+    if (!comment) return;
     const newComment = {
       id,
       comment,
@@ -115,18 +106,8 @@ function Welcome() {
     console.log(newComment);
   }
 
-  // function handleCommentFormSubmit(e) {
-  //   e.preventDefault();
-  //   const newComment = {
-  //     id,
-  //     comment,
-  //   };
-
-  //   handleAddComment(newComment)
-  // }
-
   function handleAddTask(task) {
-    setTaskList([...tasks, task]);
+    setTaskList([...taskList, task]);
     setTitle("");
   }
 
@@ -144,10 +125,13 @@ function Welcome() {
       <h1>Welcome to TO-DO</h1>
 
       <div className="welcome__btn">
-        <button className="btn btn__add btn__active" onClick={handleFormOpen}>
-          + New Task
-        </button>
-        <button className="btn btn__add">Filters</button>
+        <div>
+          <button className="btn btn__add btn__active" onClick={handleFormOpen}>
+            + New Task
+          </button>
+          <button className="btn btn__add">Filters</button>
+        </div>
+        <span>Task Added: {taskNumber}</span>
       </div>
 
       <Form formOpen={formOpen}>
@@ -170,7 +154,11 @@ function Welcome() {
       </Form>
 
       <div className="taskList">
-        <TaskList tasks={tasks} />
+        {taskNumber === 0 ? (
+          <h2>Let's Create A Task</h2>
+        ) : (
+          <TaskList tasks={taskList} taskNumber={taskNumber} />
+        )}
       </div>
     </div>
   );

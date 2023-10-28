@@ -11,6 +11,16 @@
 .welcome {
   padding: 4rem 8rem;
 }
+@media only screen and (max-width: 500px) {
+  .welcome {
+    padding: 3rem 1rem;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .welcome {
+    padding: 1rem;
+  }
+}
 .welcome h1 {
   color: var(--dark-grey-color);
   width: 100%;
@@ -18,14 +28,29 @@
   border-bottom: 2px solid var(--light-grey-color);
   padding: 2rem 0;
 }
+@media only screen and (max-width: 500px) {
+  .welcome h1 {
+    font-size: 3rem;
+  }
+}
 .welcome__btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.welcome__btn div {
   display: flex;
   gap: 1rem;
   margin: 2rem 0;
 }
-.welcome__btn .btn:hover,
-.welcome__btn .btn:active,
-.welcome__btn .btn:focus {
+.welcome__btn div .btn:hover,
+.welcome__btn div .btn:active,
+.welcome__btn div .btn:focus {
   background-color: var(--blue-color);
   color: var(--white-color);
+}
+.welcome .taskList h2 {
+  text-align: center;
+  color: var(--grey-color);
+  margin-top: 4rem;
 }/*# sourceMappingURL=Welcome.css.map */
