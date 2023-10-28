@@ -1,0 +1,21 @@
+:root {
+  --grey-color: #686868;
+  --light-grey-color: #e0e0e0;
+  --white-color: #fbfbfa;
+  --blue-color: #3b40d5;
+  --black-color: #1d1d1d;
+  --pink-color: #ec90b9;
+}
+
+.app {
+  overflow: scroll;
+  height: 100vh;
+  display: flex;
+  margin: 2rem;
+  border-top: 2px solid var(--light-grey-color);
+}
+
+@media only screen and (max-width: 900px) {
+  .app {
+  }
+}

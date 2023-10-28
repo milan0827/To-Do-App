@@ -1,0 +1,52 @@
+:root {
+  --grey-color: #686868;
+  --light-grey-color: hsl(0, 0%, 88%);
+  --white-color: #fbfbfa;
+  --blue-color: #3b40d5;
+  --dark-grey-color: #343434;
+  --black-color: #1d1d1d;
+  --pink-color: #ec90b9;
+}
+
+.form {
+  border: 2px solid var(--light-grey-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  padding-bottom: 3rem;
+
+  &__task {
+    textarea {
+      border: none;
+      // border-bottom: 1px solid var(--light-grey-color);
+      padding: 0.5rem;
+      outline: none;
+      width: 100%;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s;
+    }
+  }
+}
+
+.comments {
+  position: relative;
+  border-top: 1px solid var(--light-grey-color);
+
+  input {
+    padding: 1rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: var(--dark-grey-color);
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    position: absolute;
+    top: 35px;
+    left: 0;
+  }
+}

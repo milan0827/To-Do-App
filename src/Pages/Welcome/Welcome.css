@@ -1,0 +1,31 @@
+:root {
+  --grey-color: #686868;
+  --light-grey-color: hsl(0, 0%, 88%);
+  --white-color: #fbfbfa;
+  --blue-color: #3b40d5;
+  --dark-grey-color: #343434;
+  --black-color: #1d1d1d;
+  --pink-color: #ec90b9;
+}
+
+.welcome {
+  padding: 4rem 8rem;
+}
+.welcome h1 {
+  color: var(--dark-grey-color);
+  width: 100%;
+  text-align: center;
+  border-bottom: 2px solid var(--light-grey-color);
+  padding: 2rem 0;
+}
+.welcome__btn {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.welcome__btn .btn:hover,
+.welcome__btn .btn:active,
+.welcome__btn .btn:focus {
+  background-color: var(--blue-color);
+  color: var(--white-color);
+}/*# sourceMappingURL=Welcome.css.map */

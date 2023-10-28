@@ -1,0 +1,51 @@
+:root {
+  --grey-color: #686868;
+  --light-grey-color: hsl(0, 0%, 88%);
+  --white-color: #fbfbfa;
+  --blue-color: #3b40d5;
+  --dark-grey-color: #343434;
+  --black-color: #1d1d1d;
+  --pink-color: #ec90b9;
+}
+
+.task__list {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.task__item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  border: 2px solid var(--light-grey-color);
+  border-radius: 1rem;
+}
+.task__item input[type=checkbox] {
+  width: 2rem;
+  height: 2rem;
+}
+.task__desc {
+  flex: 0 0 90%;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: start;
+}
+.task__desc h3 {
+  color: var(--dark-grey-color);
+  font-size: 2rem;
+  font-weight: 500;
+}
+.task__desc p {
+  color: var(--grey-color);
+  font-size: 1.4rem;
+}
+.task__time {
+  display: flex;
+  gap: 4rem;
+  color: var(--pink-color);
+  font-size: 1.2rem;
+}/*# sourceMappingURL=TaskList.css.map */
