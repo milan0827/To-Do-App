@@ -1,3 +1,7 @@
+This is a Single Page Application (SPA) created using Vite and React. There are lots of bugs and issues to be fixed in this project.
+
+Some of the Routes may not work...
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
