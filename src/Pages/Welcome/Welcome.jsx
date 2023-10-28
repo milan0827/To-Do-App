@@ -31,40 +31,40 @@ const taskCreatedTime = `${dayNames[day].slice(0, 3)} - ${
   hour < 10 ? "0" + hour : hour
 } : ${minutes < 10 ? "0" + minutes : minutes}`;
 
-const tasks = [
-  {
-    id: 1234,
-    title: "Learn react js",
-    comment: "let's do this",
-    taskDate: taskCreatedDate,
-    taskTime: taskCreatedTime,
-    finished: true,
-  },
-  {
-    id: 1235,
-    title: "Learn Node js",
-    comment: "let's do this",
-    taskDate: taskCreatedDate,
-    taskTime: taskCreatedTime,
-    finished: false,
-  },
-  {
-    id: 1236,
-    title: "Go to play",
-    comment: "let's do this",
-    taskDate: taskCreatedDate,
-    taskTime: taskCreatedTime,
-    finished: false,
-  },
-  {
-    id: 1237,
-    title: "Meet friends",
-    comment: "let's do this",
-    taskDate: taskCreatedDate,
-    taskTime: taskCreatedTime,
-    finished: true,
-  },
-];
+// const tasks = [
+//   {
+//     id: 1234,
+//     title: "Learn react js",
+//     comment: "let's do this",
+//     taskDate: taskCreatedDate,
+//     taskTime: taskCreatedTime,
+//     finished: true,
+//   },
+//   {
+//     id: 1235,
+//     title: "Learn Node js",
+//     comment: "let's do this",
+//     taskDate: taskCreatedDate,
+//     taskTime: taskCreatedTime,
+//     finished: false,
+//   },
+//   {
+//     id: 1236,
+//     title: "Go to play",
+//     comment: "let's do this",
+//     taskDate: taskCreatedDate,
+//     taskTime: taskCreatedTime,
+//     finished: false,
+//   },
+//   {
+//     id: 1237,
+//     title: "Meet friends",
+//     comment: "let's do this",
+//     taskDate: taskCreatedDate,
+//     taskTime: taskCreatedTime,
+//     finished: true,
+//   },
+// ];
 
 function Welcome() {
   const [formOpen, setFormOpen] = useState(false);
@@ -90,8 +90,6 @@ function Welcome() {
     };
 
     handleAddTask(newTask);
-
-    console.log(newTask);
   }
 
   function handleCommentFormSubmit(e) {
@@ -103,7 +101,6 @@ function Welcome() {
     };
 
     handleAddComment(newComment);
-    console.log(newComment);
   }
 
   function handleAddTask(task) {
