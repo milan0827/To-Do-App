@@ -22,8 +22,6 @@ const dayNames = [
   "Saturday",
 ];
 
-console.log(day);
-
 // console.log(year, month, day, hour, minutes);
 
 const taskCreatedDate = `${month < 10 ? "0" + month : month}/${year}`;
@@ -75,7 +73,6 @@ function Welcome() {
   const [taskDate, setTaskDate] = useState(taskCreatedDate);
 
   const taskNumber = taskList.length;
-  console.log(taskNumber);
 
   const id = crypto.randomUUID();
 
@@ -85,6 +82,7 @@ function Welcome() {
     const newTask = {
       id,
       title,
+      isComplete: false,
       taskTime,
       taskDate,
     };
@@ -98,9 +96,18 @@ function Welcome() {
     const newComment = {
       id,
       comment,
+      // isComplete,
     };
 
     handleAddComment(newComment);
+  }
+
+  function handleIsComplete(id) {
+    setTaskList((tasks) =>
+      tasks.map((task) =>
+        task.id === id ? { ...task, isComplete: !task.isComplete } : task
+      )
+    );
   }
 
   function handleAddTask(task) {
@@ -109,12 +116,16 @@ function Welcome() {
   }
 
   function handleAddComment(comment) {
-    setTaskList([...tasks, comment]);
+    setTaskList([...taskList, comment]);
     setComment("");
   }
 
   function handleFormOpen() {
     setFormOpen((open) => !open);
+  }
+
+  function handleDelete(id) {
+    setTaskList((items) => items.filter((item) => item.id !== id));
   }
 
   return (
@@ -154,7 +165,12 @@ function Welcome() {
         {taskNumber === 0 ? (
           <h2>Let's Create A Task</h2>
         ) : (
-          <TaskList tasks={taskList} taskNumber={taskNumber} />
+          <TaskList
+            tasks={taskList}
+            taskNumber={taskNumber}
+            onTaskComplete={handleIsComplete}
+            onDeleteTask={handleDelete}
+          />
         )}
       </div>
     </div>
