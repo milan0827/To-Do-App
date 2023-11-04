@@ -33,30 +33,16 @@
 
   &__btn {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    div {
-      display: flex;
-      gap: 1rem;
-      margin: 2rem 0;
+    gap: 1rem;
+    margin: 2rem 0;
 
-      .btn:hover,
-      .btn:active,
-      .btn:focus {
-        background-color: var(--blue-color);
-        color: var(--white-color);
-      }
-    }
-
-    span {
-    }
-  }
-
-  .taskList {
-    h2 {
-      text-align: center;
-      color: var(--grey-color);
-      margin-top: 4rem;
+    .btn:hover,
+    .btn:active,
+    .btn:focus {
+      background-color: var(--blue-color);
+      color: var(--white-color);
     }
   }
 }

@@ -1,11 +1,15 @@
+import { useContext } from "react";
 import "../Form.css";
+import { TaskContext } from "../../../Pages/Welcome/Welcome";
 
-function Comments({ onCommentFormSubmit, comment, setComment }) {
+function Comments() {
+  const { onCommentFormSubmit, comment, setComment } = useContext(TaskContext);
+
   return (
     <form className="comments" onSubmit={onCommentFormSubmit}>
       <input
         type="text"
-        placeholder="Comment here..."
+        placeholder="The comment section does not work for now..."
         value={comment}
         onChange={(e) => setComment(e.target.value)}
       />

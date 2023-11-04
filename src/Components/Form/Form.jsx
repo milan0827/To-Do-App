@@ -1,9 +1,17 @@
-import { useState } from "react";
-import "./Form.css";
 import FormAddTask from "./FormAddTask";
+import Comments from "./CommentAdd/commentAdd";
+import { useContext } from "react";
+import { TaskContext } from "../../Pages/Welcome/Welcome";
 
-function Form({ formOpen, onAddTask, children }) {
-  return <>{children}</>;
+function Form() {
+  const { title } = useContext(TaskContext);
+
+  return (
+    <div className="form">
+      <FormAddTask />
+      {title && <Comments />}
+    </div>
+  );
 }
 
 export default Form;

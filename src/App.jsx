@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./Components/Navbar/Navbar";
-import Welcome from "./Pages/Welcome/Welcome";
+import { Welcome } from "./Pages/Welcome/Welcome";
 import Dashboard from "./Pages/Dashboard/DashBoard";
 import Tasks from "./Pages/Tasks/Tasks";
 import People from "./Pages/People/People";

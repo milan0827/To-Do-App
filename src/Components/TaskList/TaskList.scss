@@ -8,6 +8,12 @@
   --pink-color: #ec90b9;
 }
 
+h2 {
+  text-align: center;
+  color: var(--grey-color);
+  margin-top: 4rem;
+}
+
 .task {
   &__list {
     width: 100%;

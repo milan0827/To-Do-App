@@ -1,6 +1,11 @@
+import { useContext } from "react";
+import { TaskContext } from "../../Pages/Welcome/Welcome";
+
 import "./Form.css";
 
-function FormAddTask({ onTaskFormSubmit, title, setTitle }) {
+function FormAddTask() {
+  const { onTaskFormSubmit, title, setTitle } = useContext(TaskContext);
+
   return (
     <form className="form__task" onSubmit={onTaskFormSubmit}>
       <textarea

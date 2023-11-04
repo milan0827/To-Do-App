@@ -1,22 +1,25 @@
 import { BiComment } from "react-icons/bi";
 import "./TaskList.css";
+import { useContext } from "react";
+import { TaskContext } from "../../Pages/Welcome/Welcome";
 
-function TaskList({ tasks, onTaskComplete, onDeleteTask }) {
-  return (
+function TaskList() {
+  const { taskNumber, tasks } = useContext(TaskContext);
+
+  return taskNumber === 0 ? (
+    <h2>Let's Create A Task</h2>
+  ) : (
     <ul className="task__list">
       {tasks.map((task) => (
-        <TaskItem
-          key={task.id}
-          task={task}
-          onTaskComplete={onTaskComplete}
-          onDeleteTask={onDeleteTask}
-        />
+        <TaskItem key={task.id} task={task} />
       ))}
     </ul>
   );
 }
 
-function TaskItem({ task, onTaskComplete, onDeleteTask }) {
+function TaskItem({ task }) {
+  const { onTaskComplete, onDeleteTask } = useContext(TaskContext);
+
   return (
     <li className="task__item">
       <input

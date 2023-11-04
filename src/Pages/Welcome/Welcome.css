@@ -35,22 +35,14 @@
 }
 .welcome__btn {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-}
-.welcome__btn div {
-  display: flex;
   gap: 1rem;
   margin: 2rem 0;
 }
-.welcome__btn div .btn:hover,
-.welcome__btn div .btn:active,
-.welcome__btn div .btn:focus {
+.welcome__btn .btn:hover,
+.welcome__btn .btn:active,
+.welcome__btn .btn:focus {
   background-color: var(--blue-color);
   color: var(--white-color);
-}
-.welcome .taskList h2 {
-  text-align: center;
-  color: var(--grey-color);
-  margin-top: 4rem;
 }/*# sourceMappingURL=Welcome.css.map */
