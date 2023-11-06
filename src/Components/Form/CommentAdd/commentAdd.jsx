@@ -1,9 +1,8 @@
-import { useContext } from "react";
 import "../Form.css";
-import { TaskContext } from "../../../Pages/Welcome/Welcome";
+import { useTask } from "../../../Contexts/taskContexts";
 
 function Comments() {
-  const { onCommentFormSubmit, comment, setComment } = useContext(TaskContext);
+  const { onCommentFormSubmit, comment, setComment } = useTask();
 
   return (
     <form className="comments" onSubmit={onCommentFormSubmit}>

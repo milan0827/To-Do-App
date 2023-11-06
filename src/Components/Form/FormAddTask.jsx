@@ -1,10 +1,8 @@
-import { useContext } from "react";
-import { TaskContext } from "../../Pages/Welcome/Welcome";
-
 import "./Form.css";
+import { useTask } from "../../Contexts/taskContexts";
 
 function FormAddTask() {
-  const { onTaskFormSubmit, title, setTitle } = useContext(TaskContext);
+  const { onTaskFormSubmit, title, setTitle } = useTask();
 
   return (
     <form className="form__task" onSubmit={onTaskFormSubmit}>

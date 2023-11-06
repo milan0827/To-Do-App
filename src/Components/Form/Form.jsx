@@ -1,10 +1,9 @@
 import FormAddTask from "./FormAddTask";
 import Comments from "./CommentAdd/commentAdd";
-import { useContext } from "react";
-import { TaskContext } from "../../Pages/Welcome/Welcome";
+import { useTask } from "../../Contexts/taskContexts";
 
 function Form() {
-  const { title } = useContext(TaskContext);
+  const { title } = useTask();
 
   return (
     <div className="form">

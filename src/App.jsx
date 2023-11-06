@@ -8,24 +8,27 @@ import People from "./Pages/People/People";
 import Reports from "./Pages/Reports/Reports";
 import Billing from "./Pages/Billing/Billiing";
 import Integration from "./Pages/Integration/Integration";
+import { TaskProvider } from "./Contexts/taskContexts";
 
 import "./App.css";
 
 function App() {
   return (
-    <div className="app">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Welcome />} />
-        <Route path="/welcome" element={<Welcome />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/tasks" element={<Tasks />} />
-        <Route path="/people" element={<People />} />
-        <Route path="/reports" element={<Reports />} />
-        <Route path="/billing" element={<Billing />} />
-        <Route path="/integration" element={<Integration />} />
-      </Routes>
-    </div>
+    <TaskProvider>
+      <div className="app">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Welcome />} />
+          <Route path="/welcome" element={<Welcome />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/tasks" element={<Tasks />} />
+          <Route path="/people" element={<People />} />
+          <Route path="/reports" element={<Reports />} />
+          <Route path="/billing" element={<Billing />} />
+          <Route path="/integration" element={<Integration />} />
+        </Routes>
+      </div>
+    </TaskProvider>
   );
 }
 

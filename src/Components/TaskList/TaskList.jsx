@@ -1,10 +1,9 @@
 import { BiComment } from "react-icons/bi";
 import "./TaskList.css";
-import { useContext } from "react";
-import { TaskContext } from "../../Pages/Welcome/Welcome";
+import { useTask } from "../../Contexts/taskContexts";
 
 function TaskList() {
-  const { taskNumber, tasks } = useContext(TaskContext);
+  const { tasks, taskNumber } = useTask();
 
   return taskNumber === 0 ? (
     <h2>Let's Create A Task</h2>
@@ -18,7 +17,7 @@ function TaskList() {
 }
 
 function TaskItem({ task }) {
-  const { onTaskComplete, onDeleteTask } = useContext(TaskContext);
+  const { onTaskComplete, onDeleteTask } = useTask();
 
   return (
     <li className="task__item">
@@ -30,7 +29,7 @@ function TaskItem({ task }) {
       <div className="task__desc">
         <h3 className={task.isComplete ? "cross-line" : ""}>{task.title}</h3>
         <div className="task__time">
-          <span>{task.taskTime}</span> <span>{task.taskDate}</span>
+          <span>{task.taskTime}</span>
         </div>
         <div className="task__comment">
           <BiComment className="icon" />
